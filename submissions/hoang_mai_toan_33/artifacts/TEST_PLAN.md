@@ -51,8 +51,8 @@ Kết quả ước lượng được chấp nhận khi:
 
 Trong đó:
 
-(\lceil x\rceil): Làm tròn lên đến số nguyên gần nhất.
-(\lfloor x\rfloor): Làm tròn xuống đến số nguyên gần nhất.
+$\\lceil x\\rceil$: Làm tròn lên đến số nguyên gần nhất.
+$\\lfloor x\\rfloor$: Làm tròn xuống đến số nguyên gần nhất.
 Hai giới hạn đều được tính là giá trị hợp lệ.
 Giá trị nằm ngoài khoảng không được chấp nhận.
 Quy tắc áp dụng cho phép nhân và phép chia có kết quả nguyên không âm. Đối với phép chia, số chia phải khác 0 và phép chia phải cho kết quả nguyên.

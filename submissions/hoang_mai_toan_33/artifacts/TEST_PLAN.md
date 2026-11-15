@@ -35,10 +35,10 @@ Cơ chế tính sao và cập nhật tiến độ ngoài những kiểm tra cầ
 
 Gọi:
 
-(R): Kết quả chính xác của phép tính.
-(L): Giới hạn dưới của khoảng chấp nhận.
-(U): Giới hạn trên của khoảng chấp nhận.
-(E): Kết quả ước lượng do học sinh nhập.
+$R$: Kết quả chính xác của phép tính.
+$L$: Giới hạn dưới của khoảng chấp nhận.
+$U$: Giới hạn trên của khoảng chấp nhận.
+$E$: Kết quả ước lượng do học sinh nhập.
 Công thức:
 
 [ L=\lceil0.9R\rceil ]
@@ -117,7 +117,7 @@ Ví dụ:
 4.1. Danh sách 12 fixture
 Bộ dữ liệu gồm 12 phép tính cụ thể, trong đó có 6 phép nhân và 6 phép chia.
 
-Mã fixture	Phép tính	Đáp án chính xác (R)	Giới hạn dưới (L)	Giới hạn trên (U)
+Mã fixture	Phép tính	Đáp án chính xác $R$	Giới hạn dưới $L$	Giới hạn trên $U$
 F01	12 × 4	48	44	52
 F02	15 × 3	45	41	49
 F03	24 × 3	72	65	79
@@ -153,7 +153,7 @@ Thành phần	Tỷ trọng
 Ước lượng đúng	50%
 Tính toán chính xác đúng	50%
 Tổng	100%
-Gọi (P) là điểm tối đa của câu hỏi.
+Gọi $P$ là điểm tối đa của câu hỏi.
 
 Điểm thành phần ước lượng:
 
@@ -167,7 +167,7 @@ Tổng điểm:
 
 [ C=C_E+C_X ]
 
-Trong đó (A) là kết quả tính chính xác do học sinh nhập.
+Trong đó $A$ là kết quả tính chính xác do học sinh nhập.
 
 5.2. Bảng kết quả chấm điểm
 Trường hợp	Ước lượng	Tính chính xác	Điểm đạt được
@@ -213,7 +213,7 @@ Phép tính: (12\times4).
 Đáp án chính xác: 48.
 Giới hạn dưới: 44.
 Giới hạn trên: 52.
-Mã	Giá trị ước lượng (E)	Khoảng hợp lệ	Kết quả mong đợi
+Mã	Giá trị ước lượng $E$	Khoảng hợp lệ	Kết quả mong đợi
 TC-05	48	44–52	Chấp nhận
 TC-06	44	44–52	Chấp nhận vì bằng giới hạn dưới
 TC-07	52	44–52	Chấp nhận vì bằng giới hạn trên
@@ -224,7 +224,7 @@ Tiếp tục sử dụng fixture F01:
 
 Phép tính: (12\times4).
 Đáp án chính xác: 48.
-Mã	Giá trị nhập (A)	Đáp án chính xác (R)	Kết quả mong đợi
+Mã	Giá trị nhập $A$	Đáp án chính xác $R$	Kết quả mong đợi
 TC-10	48	48	Tính chính xác đúng
 TC-11	47	48	Tính chính xác sai
 6.4. Kiểm thử kết hợp hai thành phần (TC-12 đến TC-13)
@@ -234,11 +234,11 @@ Phép tính: (12\times4).
 Đáp án chính xác: 48.
 Khoảng ước lượng: 44–52.
 Điểm tối đa giả định của câu hỏi: 10 điểm.
-Mã	Giá trị ước lượng (E)	Giá trị chính xác (A)	Kết quả ước lượng	Kết quả tính chính xác	Điểm mong đợi
+Mã	Giá trị ước lượng $E$	Giá trị chính xác $A$	Kết quả ước lượng	Kết quả tính chính xác	Điểm mong đợi
 TC-12	48	47	Đúng	Sai	5/10 điểm
 TC-13	43	48	Sai	Đúng	5/10 điểm
 6.5. Kiểm thử các trường hợp tính điểm còn lại
-Mã	Giá trị ước lượng (E)	Giá trị chính xác (A)	Kết quả mong đợi
+Mã	Giá trị ước lượng $E$	Giá trị chính xác $A$	Kết quả mong đợi
 TC-14	48	48	Cả hai đúng, đạt 10/10 điểm
 TC-15	43	47	Cả hai sai, đạt 0/10 điểm
 6.6. Kiểm thử lưu dữ liệu và bảo mật

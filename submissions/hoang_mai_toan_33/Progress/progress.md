@@ -1,6 +1,6 @@
 PROGRESS — 33 — Track B
-Starter: fossbk-spec/ktpmud-bkt-vuontoan-starter · tag bkt-2026-v1
-Fork: https://github.com/daohailinh10-code/ktpmud-bkt-vuontoan-starter
+
+
 PC-1 — 11/11/2026
 1.1. Tiến độ theo acceptance criteria
 Mã	Trạng thái (Chưa / Đang / Xong)	Bằng chứng (commit / CI / file)	Ghi chú

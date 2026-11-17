@@ -18,7 +18,7 @@ Workflow thực hiện thành công:
 
 ## 3. Kết quả
 
-<badge>5 passed, 0 failed</badge>
+**Kết quả: 5 passed, 0 failed.**
 
 | Nhóm kiểm thử | Kết quả |
 |---|---|

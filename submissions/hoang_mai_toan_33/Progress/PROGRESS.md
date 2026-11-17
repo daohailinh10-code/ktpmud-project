@@ -6,7 +6,8 @@
 - **Starter:** `bkt-2026-v1`
 - **Branch báo cáo:** `submit/hoang_mai_toan-N33`
 - **Ngày cập nhật:** 17/11/2026
-- **Commit gần nhất đã đối chiếu:** `4123a683ce12e1955e47f7ccb457477f37e79924`
+- **Commit mã nguồn starter đã có CI:** `be5da68e3e6d4d776aa96a30cf6bfe6ee1675df5` (theo `source-ref.json` và `TEST_REPORT.md`).
+- **PR nộp tài liệu:** [#37](https://github.com/fossbk-spec/ktpmud-project/pull/37), nhánh `submit/hoang_mai_toan-N33`; trạng thái mở, không phải Draft; bot đã xác nhận hợp lệ về cấu trúc tại commit `ae38b95`.
 
 > **Nguyên tắc ghi trạng thái:** Chỉ đánh dấu “Xong” khi có bằng chứng tương ứng trong mã nguồn, test chạy được, kết quả kiểm thử hoặc CI. Nội dung mới được mô tả trong tài liệu được ghi là “Đã đặc tả — chưa xác minh triển khai”. Báo cáo này phản ánh bằng chứng quan sát được trên branch tại ngày cập nhật, không thay thế kết quả chạy test/CI.
 
@@ -17,7 +18,7 @@
 | Mã | Trạng thái | Bằng chứng trên branch | Ghi chú |
 |---|---|---|---|
 | B-01 | Đang | `artifacts/REQUIREMENTS.md` FR-01, FR-02; `artifacts/DECISIONS.md` ADR-01, ADR-08 | Đã đặc tả việc tích hợp vào luồng học tập và type `estimate`; chưa có mã nguồn frontend để xác minh tích hợp. |
-| B-02 | Đang | `artifacts/REQUIREMENTS.md` mục 8; `artifacts/TEST_PLAN.md` mục 4 | Có hai danh sách 12 fixture nhưng dữ liệu từ F03 trở đi không thống nhất giữa hai tài liệu; chưa thấy file fixture có cấu trúc hoặc test nạp fixture. |
+| B-02 | Đang | `artifacts/REQUIREMENTS.md` mục 8; `artifacts/TEST_PLAN.md` mục 4 | Đã đồng bộ danh sách 12 fixture trong `REQUIREMENTS.md` và `TEST_PLAN.md`. `TEST_REPORT.md` ghi nhận CI ở commit starter `be5da68...` có test 12 fixture PASS; chưa khẳng định bộ fixture đã được nạp vào ứng dụng. |
 | B-03 | Xong (đặc tả) | `artifacts/DECISIONS.md` ADR-03; `artifacts/TEST_PLAN.md` mục 3 | Đã quy định L = ceil(0.9 * R), U = floor(1.1 * R), chấp nhận L <= E <= U; có ví dụ phép nhân, phép chia và giá trị biên. Chưa xác minh bằng test tự động. |
 | B-04 | Đang | `artifacts/REQUIREMENTS.md` FR-08; `artifacts/DECISIONS.md` ADR-02, ADR-05 | Đã đặc tả không trả đáp án/cận chấm điểm trước khi nộp; chưa có bằng chứng kiểm thử JSON API thực tế. |
 | B-05 | Đang | `artifacts/REQUIREMENTS.md` FR-09; `artifacts/DECISIONS.md` ADR-05, ADR-06 | Đã mô tả lưu hai câu trả lời trong `attempts.answers_json`; chưa xác minh triển khai, truy xuất sau refresh hoặc cách ly dữ liệu người dùng. |
@@ -34,7 +35,7 @@
 | Yêu cầu | Trạng thái | Bằng chứng / việc còn lại |
 |---|---|---|
 | DEC-03: công thức xác định L, U cho phép nhân/chia | Xong về đặc tả | `artifacts/DECISIONS.md` ADR-03 và `artifacts/TEST_PLAN.md` mục 3; công thức và hai ví dụ số đã được ghi rõ. |
-| Bổ sung 12 fixture tổng hợp | Đang | Hai tài liệu đều có 12 dòng fixture nhưng danh sách không khớp từ F03 trở đi. Cần chọn một bộ chuẩn, đồng bộ REQUIREMENTS/TEST_PLAN và lưu thành fixture dùng được trong test. |
+| Bổ sung 12 fixture tổng hợp | Đang | Đã đồng bộ hai bảng theo bộ chuẩn tại `REQUIREMENTS.md` mục 8. CI của starter ghi nhận test 12 fixture PASS; cần giữ đường dẫn fixture thực tế nhất quán với mã nguồn. |
 | Bổ sung dữ liệu cụ thể cho TC-05 đến TC-13 | Xong về đặc tả | `artifacts/TEST_PLAN.md` mục 6.2–6.4 có E, A, khoảng hợp lệ và kết quả mong đợi. |
 | Làm rõ chấm điểm khi chỉ đúng một thành phần; ảnh hưởng progress/sao | Xong về đặc tả | `artifacts/DECISIONS.md` ADR-04, ADR-07; `artifacts/REQUIREMENTS.md` FR-06, FR-10; `artifacts/TEST_PLAN.md` mục 5. |
 
@@ -47,16 +48,16 @@
 | Đồng bộ 12 fixture và bổ sung test tự động | 17/11/2026 | Chưa hoàn thành theo bằng chứng hiện có | Hai bảng fixture đang không thống nhất; chưa thấy fixture JSON hoặc test tự động. |
 | CI, bảo mật và accessibility | 18/11/2026 | Chưa xác minh | Chưa có bằng chứng workflow xanh, checklist bảo mật hoặc kết quả accessibility. |
 | Hoàn thiện báo cáo và tài liệu bàn giao | 19/11/2026 | Đang | Đã có REQUIREMENTS, DECISIONS, TEST_PLAN; các deliverable còn lại được liệt kê tại mục 2.3. |
-| Draft PR và kiểm tra validate | Trước 11:30 ngày 18/11/2026 | Chưa có PR được tìm thấy | Cần mở Draft PR và kiểm tra CI/validate theo yêu cầu giảng viên. |
+| PR nộp bài và validate cấu trúc | Trước 11:30 ngày 18/11/2026 | Đã mở PR #37; bot xác nhận bài hợp lệ về cấu trúc | PR đang mở, chưa merge; chờ giảng viên/TA review nội dung. |
 | Chốt tag RC và PR nộp cuối | Trước 23:59 ngày 19/11/2026 | Chưa thực hiện | Tag dự kiến: `bkt-2026-33-rc1`; cần cập nhật SHA và kết quả CI sau khi tạo tag. |
 
 ### 1.4. Rủi ro / vấn đề đang vướng
 
 - **Thiếu bằng chứng triển khai:** So sánh branch với `main` cho thấy các thay đổi trong thư mục nhóm hiện tập trung ở tài liệu; chưa có thay đổi mã nguồn frontend/backend để chứng minh tính năng đã chạy.
-- **Fixture chưa thống nhất:** `artifacts/REQUIREMENTS.md` và `artifacts/TEST_PLAN.md` có hai bộ 12 fixture khác nhau từ F03 trở đi. Nếu không đồng bộ, test và demo có thể dùng dữ liệu khác nhau.
-- **Chưa có test/CI được xác nhận:** Chưa có bằng chứng `npm test`, test tự động hoặc CI xanh.
-- **Thiếu deliverable bàn giao:** Chưa thấy TEST_REPORT, SECURITY_PRIVACY_CHECKLIST, AI_USE, CONTRIBUTIONS và slide/demo hoàn chỉnh.
-- **Metadata nộp bài chưa hoàn thiện:** `slide/submission.json` còn giá trị placeholder; `slide/source-ref.json` đang rỗng; cần kiểm tra lại vị trí và nội dung file theo mẫu giảng viên.
+- **Fixture:** Danh sách 12 fixture trong `REQUIREMENTS.md` và `TEST_PLAN.md` đã được đồng bộ trong lần cập nhật 17/11/2026. CI ở starter commit `be5da68...` ghi nhận kiểm thử fixture PASS.
+- **Test/CI:** `TEST_REPORT.md` ghi nhận `npm ci` và `npm test` thành công, 5 passed/0 failed tại starter commit `be5da68...`; kết quả này không thay thế kiểm thử tích hợp đầy đủ.
+- **Deliverable:** Đã có `TEST_REPORT.md`, `SECURITY_PRIVACY_CHECKLIST.md`, `AI_USE.md`, `CONTRIBUTIONS.md` và README trong thư mục nộp bài. Slide/demo hoàn chỉnh chưa được xác minh.
+- **Metadata:** `submission.json` và `source-ref.json` hiện nằm ở thư mục gốc `submissions/hoang_mai_toan_33/`; đã có mã nhóm, mã bài, MSSV và tham chiếu starter/commit/CI.
 - **Tên file tiến độ cũ bị sai chính tả:** File cũ là `Progress/PROGESS.md`; bản này dùng tên đúng `Progress/PROGRESS.md`.
 
 ### 1.5. Câu hỏi cần xác nhận với giảng viên
@@ -112,17 +113,17 @@
 
 | Deliverable | Trạng thái | Đường dẫn / bằng chứng |
 |---|---|---|
-| README.md có hướng dẫn cài đặt, chạy và test | Chưa có trong thư mục gốc bài nộp | Cần bổ sung README ở đúng vị trí theo mẫu |
+| README.md | Có | `submissions/hoang_mai_toan_33/README.md`; cần rà soát nội dung hướng dẫn cuối cùng |
 | REQUIREMENTS.md | Có | `artifacts/REQUIREMENTS.md` |
 | DECISIONS.md / ADR | Có | `artifacts/DECISIONS.md` |
-| Test tự động và CI xanh | Chưa có bằng chứng | Chưa xác minh script test/workflow |
-| TEST_REPORT.md | Chưa có | Cần ghi môi trường, lệnh chạy, kết quả và lỗi còn tồn tại |
-| SECURITY_PRIVACY_CHECKLIST.md | Chưa có | Cần rà soát PII, secret, API và quyền truy cập |
-| AI_USE.md | Chưa có | Cần khai báo việc sử dụng AI hoặc ghi rõ không sử dụng theo mẫu của môn học |
-| CONTRIBUTIONS.md | Chưa có | Cần ghi đóng góp theo alias và bằng chứng commit |
+| Test tự động và CI | Có bằng chứng CI của starter | `TEST_REPORT.md`: 5 passed, 0 failed tại commit `be5da68...`; phạm vi test có giới hạn như mục 4 của báo cáo |
+| TEST_REPORT.md | Có | `artifacts/TEST_REPORT.md` |
+| SECURITY_PRIVACY_CHECKLIST.md | Có | `artifacts/SECURITY_PRIVACY_CHECKLIST.md`; nội dung checklist không đồng nghĩa đã có kiểm thử bảo mật động |
+| AI_USE.md | Có | `artifacts/AI_USE.md` |
+| CONTRIBUTIONS.md | Có | `artifacts/CONTRIBUTIONS.md`; cần bảo đảm phân công/commit phản ánh đúng đóng góp thực tế |
 | Slide / demo script không quá 7 phút | Chưa có bằng chứng hoàn chỉnh | Thư mục `slide/` hiện chưa có slide/demo hoàn chỉnh |
-| Draft PR vào `ktpmud-project`, validate xanh | Chưa có PR được tìm thấy | Cần tạo Draft PR trước 11:30 ngày 18/11/2026 và kiểm tra validate |
-| `submission.json` và `source-ref.json` hợp lệ | Chưa hoàn thành | File hiện nằm trong `slide/`; submission còn placeholder, source-ref rỗng. Cần đối chiếu đúng mẫu giảng viên. |
+| PR vào `ktpmud-project`, validate cấu trúc | Đã có PR #37 và bot báo hợp lệ | PR #37 đang mở, chưa merge; chờ review nội dung của giảng viên/TA |
+| `submission.json` và `source-ref.json` | Đã có ở thư mục gốc nhóm | Đã ghi case study BKT-2, group 33, hai MSSV và tham chiếu starter/commit/CI |
 
 ### 2.4. Việc còn lại và người phụ trách
 
@@ -138,7 +139,7 @@
 ### 2.5. Rủi ro / câu hỏi PC-2
 
 - Rủi ro lớn nhất là tài liệu đặc tả đã có nhưng chưa có bằng chứng triển khai, test tự động và CI. Không chuyển các tiêu chí này sang “Xong” chỉ dựa trên nội dung tài liệu.
-- Cần thống nhất bộ fixture trước khi viết test để tránh kết quả kiểm thử khác nhau giữa REQUIREMENTS và TEST_PLAN.
+- Danh sách fixture trong hai tài liệu đã được đồng bộ; tiếp tục bảo đảm mã nguồn/test sử dụng đúng cùng bộ dữ liệu.
 - Cần xác nhận mẫu và vị trí chính xác của `submission.json`, `source-ref.json` theo hướng dẫn Track B của giảng viên.
 - Cần cập nhật alias và commit thực tế vào bảng phân công; không để vai trò chung thay cho bằng chứng đóng góp ở bản cuối.
 
@@ -148,7 +149,7 @@ Phần này phải được cập nhật sau khi nhóm thực sự hoàn tất F
 
 - **Tag:** `bkt-2026-33-rc1`
 - **Commit SHA của tag:** Chưa tạo / chưa xác minh
-- **Draft PR và validate:** Chưa có PR được tìm thấy tại thời điểm 17/11/2026
+- **PR nộp bài:** PR #37 đang mở tại `fossbk-spec/ktpmud-project`, nhánh `submit/hoang_mai_toan-N33`; bot đã xác nhận hợp lệ về cấu trúc, chưa có kết luận review nội dung.
 - **Trạng thái cuối B-01 đến B-12:** Cập nhật sau khi có mã nguồn, test và CI làm bằng chứng
 - **Deliverable còn thiếu:** Đối chiếu lại mục 2.3 sau khi hoàn thiện
 - **Việc chưa hoàn thành và lý do:** Cập nhật trung thực tại thời điểm Freeze

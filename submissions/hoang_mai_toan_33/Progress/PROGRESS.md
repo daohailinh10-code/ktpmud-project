@@ -87,7 +87,7 @@
 |---|---|---|---|
 | Luồng câu hỏi estimate | 15/11/2026 | Chưa có bằng chứng mã nguồn | Cần bổ sung và chạy thử trên hệ thống. |
 | API chấm điểm và lưu dữ liệu | 15/11/2026 | Chưa có bằng chứng mã nguồn | Cần triển khai nhánh estimate và kiểm thử API. |
-| Fixture và test tự động | 17/11/2026 | Có danh sách fixture trong tài liệu; chưa có fixture dùng trong test | Hai danh sách fixture chưa thống nhất. |
+| Fixture và test tự động | 17/11/2026 | Hai bảng fixture trong REQUIREMENTS/TEST_PLAN đã đồng bộ; TEST_REPORT ghi nhận CI starter có test 12 fixture PASS | Cần tiếp tục đối chiếu dữ liệu fixture của mã nguồn starter với bộ chuẩn tài liệu khi chốt bản cuối. |
 | CI, bảo mật và accessibility | 18/11/2026 | Chưa có bằng chứng | Cần hoàn thiện trước hạn PC-2. |
 | Tài liệu bàn giao | 19/11/2026 | Có 3 tài liệu đặc tả/kế hoạch | Còn thiếu các deliverable tại mục 2.3. |
 | Tag RC và PR nộp cuối | Trước 23:59 ngày 19/11/2026 | Chưa thực hiện | Phụ thuộc hoàn tất triển khai, kiểm thử và validate. |
@@ -129,7 +129,7 @@
 
 | Việc cần làm | Vai trò phụ trách | Hạn |
 |---|---|---|
-| Đồng bộ một bộ 12 fixture giữa REQUIREMENTS và TEST_PLAN; tạo fixture dữ liệu có cấu trúc | QA / DOCS | 17/11/2026 |
+| Đối chiếu bộ fixture trong mã nguồn starter với bộ chuẩn đã đồng bộ trong REQUIREMENTS/TEST_PLAN | QA / DOCS | 18/11/2026 |
 | Hoàn thiện giao diện estimate và API chấm điểm/lưu kết quả | FE / BE | Ưu tiên ngay, trước PC-2 |
 | Viết và chạy test tự động cho công thức, scoring, API, lưu dữ liệu và hồi quy | QA / BE | Trước 11:30 ngày 18/11/2026 |
 | Bổ sung workflow CI, kiểm tra bảo mật và accessibility | BE / QA / FE | 18/11/2026 |

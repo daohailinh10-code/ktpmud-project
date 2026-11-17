@@ -275,34 +275,38 @@ Mỗi câu hỏi `estimate` được chia thành hai phần điểm bằng nhau:
 | Tính toán chính xác đúng | 50% |
 | Tổng | 100% |
 
-Gọi \(P\) là điểm tối đa của câu hỏi, \(E\) là giá trị ước lượng và \(A\) là kết quả tính toán chính xác học sinh nhập.
 
-Điểm thành phần ước lượng:
+### QUY TẮC TÍNH ĐIỂM
 
-\[
-C_E=
-\begin{cases}
-0.5P & \text{nếu }L\leq E\leq U\\
-0 & \text{nếu ngược lại}
-\end{cases}
-\]
+Gọi:
+- P: Điểm tối đa của câu hỏi.
+- E: Giá trị ước lượng do học sinh nhập.
+- A: Kết quả tính toán chính xác do học sinh nhập.
+- R: Kết quả tính toán chính xác của hệ thống.
+- L: Giới hạn dưới của khoảng ước lượng hợp lệ.
+- U: Giới hạn trên của khoảng ước lượng hợp lệ.
 
-Điểm thành phần tính chính xác:
+**1. Điểm thành phần ước lượng**
 
-\[
-C_X=
-\begin{cases}
-0.5P & \text{nếu }A=R\\
-0 & \text{nếu ngược lại}
-\end{cases}
-\]
+- Nếu L <= E <= U, học sinh được 0.5 * P điểm.
+- Nếu không thỏa mãn điều kiện trên, học sinh được 0 điểm.
 
-Tổng điểm câu hỏi:
+**2. Điểm thành phần tính toán chính xác**
 
-\[
-C=C_E+C_X
-\]
+- Nếu A = R, học sinh được 0.5 * P điểm.
+- Nếu A khác R, học sinh được 0 điểm.
 
+**3. Tổng điểm câu hỏi**
+
+Tổng điểm câu hỏi được tính bằng tổng điểm của hai thành phần:
+
+C = C_E + C_X
+
+Trong đó:
+- C_E: Điểm thành phần ước lượng.
+- C_X: Điểm thành phần tính toán chính xác.
+
+Như vậy, mỗi thành phần chiếm 50% tổng điểm tối đa của câu hỏi. Học sinh có thể đạt điểm tối đa khi cả giá trị ước lượng nằm trong khoảng hợp lệ và kết quả tính toán chính xác trùng với đáp án của hệ thống.
 **Bảng các trường hợp chấm điểm:**
 
 | Ước lượng | Tính chính xác | Điểm đạt được |

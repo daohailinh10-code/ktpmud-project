@@ -141,20 +141,20 @@ Ví dụ:
 4.1. Danh sách 12 fixture
 Bộ dữ liệu gồm 12 phép tính cụ thể, trong đó có 6 phép nhân và 6 phép chia.
 Mã fixture	Phép tính	Đáp án chính xác R	Giới hạn dưới L	Giới hạn trên U
-F01	12 × 4	48	44	52
-F02	15 × 3	45	41	49
-F03	24 × 3	72	65	79
-F04	18 × 5	90	81	99
-F05	25 × 4	100	90	110
-F06	32 × 3	96	87	105
-F07	48 ÷ 4	12	11	13
-F08	72 ÷ 6	12	11	13
-F09	84 ÷ 4	21	19	23
-F10	96 ÷ 4	24	22	26
-F11	120 ÷ 5	24	22	26
-F12	144 ÷ 6	24	22	26
-
-
+| Mã fixture | Phép tính | Đáp án chính xác R | Giới hạn dưới L | Giới hạn trên U |
+|---|---:|---:|---:|---:|
+| F01 | 12 × 4 | 48 | 44 | 52 |
+| F02 | 15 × 3 | 45 | 41 | 49 |
+| F03 | 24 × 3 | 72 | 65 | 79 |
+| F04 | 18 × 5 | 90 | 81 | 99 |
+| F05 | 25 × 4 | 100 | 90 | 110 |
+| F06 | 32 × 3 | 96 | 87 | 105 |
+| F07 | 48 ÷ 4 | 12 | 11 | 13 |
+| F08 | 72 ÷ 6 | 12 | 11 | 13 |
+| F09 | 84 ÷ 4 | 21 | 19 | 23 |
+| F10 | 96 ÷ 4 | 24 | 22 | 26 |
+| F11 | 120 ÷ 5 | 24 | 22 | 26 |
+| F12 | 144 ÷ 6 | 24 | 22 | 26 |
 4.2. Kiểm tra tính đúng đắn của fixture
 Mỗi fixture phải đáp ứng các điều kiện:
 
@@ -178,10 +178,11 @@ Ví dụ dữ liệu lưu cho fixture F01:
 5. Quy tắc chấm điểm cần kiểm thử
 5.1. Chia điểm thành hai thành phần
 Mỗi câu hỏi estimate có hai thành phần:
-Thành phần	Tỷ trọng
-Ước lượng đúng	50%
-Tính toán chính xác đúng	50%
-Tổng	100%
+| Thành phần | Tỷ trọng |
+|---|---:|
+| Ước lượng đúng | 50% |
+| Tính toán chính xác đúng | 50% |
+| **Tổng** | **100%** |
 
 
 Gọi:
@@ -212,12 +213,12 @@ C = C_E + C_X
 Trong đó C_E là điểm thành phần ước lượng và C_X là điểm thành phần tính toán chính xác.
 5.2. Bảng kết quả chấm điểm
 Trường hợp	Ước lượng	Tính chính xác	Điểm đạt được
-TH01	Đúng	Đúng	100%
-TH02	Đúng	Sai	50%
-TH03	Sai	Đúng	50%
-TH04	Sai	Sai	0%
-
-
+| Trường hợp | Ước lượng | Tính chính xác | Điểm đạt được |
+|---|---|---|---:|
+| TH01 | Đúng | Đúng | 100% |
+| TH02 | Đúng | Sai | 50% |
+| TH03 | Sai | Đúng | 50% |
+| TH04 | Sai | Sai | 0% |
 5.3. Ảnh hưởng đến attempts, progress và sao
 Khi học sinh nộp bài:
 
@@ -256,13 +257,12 @@ Không tự đặt thêm ngưỡng hoàn thành hoặc công thức tính sao m�
 Lưu ý: Ngưỡng hoàn thành và công thức tính sao phải được giữ theo mã nguồn hiện tại. Kế hoạch kiểm thử không giả định một ngưỡng hoặc công thức mới.
 6. Các trường hợp kiểm thử chi tiết
 6.1. Kiểm thử giao diện và nhập dữ liệu
-Mã	Trường hợp kiểm thử	Dữ liệu đầu vào	Kết quả mong đợi
-TC-01	Hiển thị câu hỏi estimate	type = estimate	Hiển thị nội dung phép tính và hai ô nhập
-TC-02	Nhập hai giá trị hợp lệ	Ước lượng = 48; chính xác = 48	Hệ thống tiếp nhận hai giá trị
-TC-03	Nhập dữ liệu không hợp lệ	Ước lượng = "abc"; chính xác = 48	Hệ thống từ chối dữ liệu không phải số nguyên
-TC-04	Bỏ trống một ô nhập	Ước lượng = 48; chính xác = rỗng	Hệ thống yêu cầu nhập đầy đủ dữ liệu
-
-
+| Mã | Trường hợp kiểm thử | Dữ liệu đầu vào | Kết quả mong đợi |
+|---|---|---|---|
+| TC-01 | Hiển thị câu hỏi estimate | type = estimate | Hiển thị nội dung phép tính và hai ô nhập |
+| TC-02 | Nhập hai giá trị hợp lệ | Ước lượng = 48; chính xác = 48 | Hệ thống tiếp nhận hai giá trị |
+| TC-03 | Nhập dữ liệu không hợp lệ | Ước lượng = "abc"; chính xác = 48 | Hệ thống từ chối dữ liệu không phải số nguyên |
+| TC-04 | Bỏ trống một ô nhập | Ước lượng = 48; chính xác = rỗng | Hệ thống yêu cầu nhập đầy đủ dữ liệu |
 6.2. Kiểm thử khoảng ước lượng (TC-05 đến TC-09)
 Sử dụng fixture F01:
 
@@ -273,13 +273,13 @@ Phép tính: 12 × 4.
 Giới hạn dưới: 44.
 
 Giới hạn trên: 52.
-Mã	Giá trị ước lượng E	Khoảng hợp lệ	Kết quả mong đợi
-TC-05	48	44–52	Chấp nhận
-TC-06	44	44–52	Chấp nhận vì bằng giới hạn dưới
-TC-07	52	44–52	Chấp nhận vì bằng giới hạn trên
-TC-08	43	44–52	Không chấp nhận vì nhỏ hơn giới hạn dưới
-TC-09	53	44–52	Không chấp nhận vì lớn hơn giới hạn trên
-
+| Mã | Giá trị ước lượng E | Khoảng hợp lệ | Kết quả mong đợi |
+|---|---:|---:|---|
+| TC-05 | 48 | 44–52 | Chấp nhận |
+| TC-06 | 44 | 44–52 | Chấp nhận vì bằng giới hạn dưới |
+| TC-07 | 52 | 44–52 | Chấp nhận vì bằng giới hạn trên |
+| TC-08 | 43 | 44–52 | Không chấp nhận vì nhỏ hơn giới hạn dưới |
+| TC-09 | 53 | 44–52 | Không chấp nhận vì lớn hơn giới hạn trên |
 
 6.3. Kiểm thử kết quả tính toán chính xác (TC-10 đến TC-11)
 Tiếp tục sử dụng fixture F01:
@@ -287,9 +287,10 @@ Tiếp tục sử dụng fixture F01:
 Phép tính: 12 × 4.
 
 Đáp án chính xác: 48.
-Mã	Giá trị nhập A	Đáp án chính xác R	Kết quả mong đợi
-TC-10	48	48	Tính chính xác đúng
-TC-11	47	48	Tính chính xác sai
+| Mã | Giá trị nhập A | Đáp án chính xác R | Kết quả mong đợi |
+|---|---:|---:|---|
+| TC-10 | 48 | 48 | Tính chính xác đúng |
+| TC-11 | 47 | 48 | Tính chính xác sai |
 
 
 6.4. Kiểm thử kết hợp hai thành phần (TC-12 đến TC-13)
@@ -301,35 +302,34 @@ Phép tính: 12 × 4.
 
 Khoảng ước lượng: 44–52.
 
-Điểm tối đa giả định của câu hỏi: 10 điểm.
-Mã	Giá trị ước lượng E	Giá trị chính xác A	Kết quả ước lượng	Kết quả tính chính xác	Điểm mong đợi
-TC-12	48	47	Đúng	Sai	5/10 điểm
-TC-13	43	48	Sai	Đúng	5/10 điểm
+| Mã | Giá trị ước lượng E | Giá trị chính xác A | Kết quả ước lượng | Kết quả tính chính xác | Điểm mong đợi |
+|---|---:|---:|---|---|---:|
+| TC-12 | 48 | 47 | Đúng | Sai | 5/10 điểm |
+| TC-13 | 43 | 48 | Sai | Đúng | 5/10 điểm |
 
 
 6.5. Kiểm thử các trường hợp tính điểm còn lại
-Mã	Giá trị ước lượng E	Giá trị chính xác A	Kết quả mong đợi
-TC-14	48	48	Cả hai đúng, đạt 10/10 điểm
-TC-15	43	47	Cả hai sai, đạt 0/10 điểm
-
+| Mã | Giá trị ước lượng E | Giá trị chính xác A | Kết quả mong đợi |
+|---|---:|---:|---|
+| TC-14 | 48 | 48 | Cả hai đúng, đạt 10/10 điểm |
+| TC-15 | 43 | 47 | Cả hai sai, đạt 0/10 điểm |
 
 6.6. Kiểm thử lưu dữ liệu và bảo mật
 Mã	Trường hợp kiểm thử	Dữ liệu hoặc thao tác	Kết quả mong đợi
-TC-16	Lưu câu trả lời	E = 48; A = 48	answers_json lưu đủ hai giá trị
-TC-17	Kiểm tra API lấy câu hỏi	Gọi API lấy danh sách câu hỏi	Không trả về correct_answer, lower, upper, exact
-TC-18	Cập nhật tiến độ	Nộp bài có câu estimate đạt 50% điểm	Tổng điểm bài làm được sử dụng để cập nhật progress theo cơ chế hiện tại
-TC-19	Tính sao	Nộp bài có kết quả chứa điểm thành phần	Sao được tính theo quy tắc hiện có dựa trên kết quả bài làm
-TC-20	Kiểm tra số câu đúng	Một câu estimate chỉ đúng một thành phần	correct_count không tăng đối với câu đó; điểm thành phần vẫn được ghi nhận
-
-
+| Mã | Trường hợp kiểm thử | Dữ liệu hoặc thao tác | Kết quả mong đợi |
+|---|---|---|---|
+| TC-16 | Lưu câu trả lời | E = 48; A = 48 | answers_json lưu đủ hai giá trị |
+| TC-17 | Kiểm tra API lấy câu hỏi | Gọi API lấy danh sách câu hỏi | Không trả về correct_answer, lower, upper, exact |
+| TC-18 | Cập nhật tiến độ | Nộp bài có câu estimate đạt 50% điểm | Tổng điểm bài làm được sử dụng để cập nhật progress theo cơ chế hiện tại |
+| TC-19 | Tính sao | Nộp bài có kết quả chứa điểm thành phần | Sao được tính theo quy tắc hiện có dựa trên kết quả bài làm |
+| TC-20 | Kiểm tra số câu đúng | Một câu estimate chỉ đúng một thành phần | correct_count không tăng đối với câu đó; điểm thành phần vẫn được ghi nhận |
 6.7. Kiểm thử hồi quy
-Mã	Loại câu hỏi	Thao tác	Kết quả mong đợi
-TC-21	multiple-choice	Chọn đáp án đúng	Hệ thống chấm đúng
-TC-22	input	Nhập đáp án đúng	Hệ thống chấm đúng
-TC-23	compare	Nhập ký hiệu so sánh đúng	Hệ thống chấm đúng
-TC-24	paint	Chọn màu đúng	Hệ thống chấm đúng
-
-
+| Mã | Loại câu hỏi | Thao tác | Kết quả mong đợi |
+|---|---|---|---|
+| TC-21 | multiple-choice | Chọn đáp án đúng | Hệ thống chấm đúng |
+| TC-22 | input | Nhập đáp án đúng | Hệ thống chấm đúng |
+| TC-23 | compare | Nhập ký hiệu so sánh đúng | Hệ thống chấm đúng |
+| TC-24 | paint | Chọn màu đúng | Hệ thống chấm đúng |
 7. Phương pháp thực hiện kiểm thử
 7.1. Kiểm thử đơn vị (Unit Testing)
 Kiểm tra riêng các chức năng:

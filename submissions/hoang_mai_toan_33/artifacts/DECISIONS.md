@@ -185,91 +185,70 @@ Backend phải phân tích JSON trong `correct_answer` khi xử lý câu hỏi `
 
 Hệ thống cần một quy tắc xác định rõ giá trị ước lượng nào được chấp nhận. Nếu chỉ sử dụng khái niệm “gần đúng” mà không quy định giới hạn, kết quả chấm điểm sẽ không nhất quán và khó kiểm thử.
 
-**Quyết định:**
+QUYẾT ĐỊNH: QUY TẮC XÁC ĐỊNH KHOẢNG ƯỚC LƯỢNG HỢP LỆ
 
-Nhóm lựa chọn sai số tương đối 10% so với kết quả chính xác để xác định khoảng ước lượng hợp lệ.
+Nhóm lựa chọn mức sai số tương đối 10% so với kết quả chính xác để xác định khoảng ước lượng hợp lệ.
 
 Gọi:
+- R: Kết quả chính xác.
+- L: Giới hạn dưới.
+- U: Giới hạn trên.
+- E: Giá trị ước lượng do học sinh nhập.
 
-- \(R\): Kết quả chính xác.
-- \(L\): Giới hạn dưới.
-- \(U\): Giới hạn trên.
-- \(E\): Giá trị ước lượng do học sinh nhập.
+Công thức xác định giới hạn:
 
-Công thức:
+L = ceil(0.9 * R)
 
-\[
-L=\lceil0.9R\rceil
-\]
+U = floor(1.1 * R)
 
-\[
-U=\lfloor1.1R\rfloor
-\]
+Giá trị ước lượng được chấp nhận khi thỏa mãn điều kiện:
 
-Giá trị ước lượng được chấp nhận khi:
+L <= E <= U
 
-\[
-L\leq E\leq U
-\]
+Trong đó:
+- ceil(x): Phép làm tròn lên đến số nguyên gần nhất.
+- floor(x): Phép làm tròn xuống đến số nguyên gần nhất.
 
-Trong đó, \(\lceil x\rceil\) là phép làm tròn lên và \(\lfloor x\rfloor\) là phép làm tròn xuống.
+VÍ DỤ 1: PHÉP NHÂN
 
-**Ví dụ 1: Phép nhân**
+Với phép tính:
 
-Với:
-
-\[
-12\times4=48
-\]
+12 * 4 = 48
 
 Ta có:
 
-\[
-L=\lceil48\times0.9\rceil=44
-\]
+L = ceil(48 * 0.9) = 44
 
-\[
-U=\lfloor48\times1.1\rfloor=52
-\]
+U = floor(48 * 1.1) = 52
 
 Vậy khoảng ước lượng hợp lệ là:
 
-\[
-44\leq E\leq52
-\]
+44 <= E <= 52
 
-Các giá trị 44, 48 và 52 đều được chấp nhận. Giá trị 43 và 53 không được chấp nhận.
+Các giá trị 44, 48 và 52 đều được chấp nhận. Các giá trị 43 và 53 không được chấp nhận.
 
-**Ví dụ 2: Phép chia**
+VÍ DỤ 2: PHÉP CHIA
 
-Với:
+Với phép tính:
 
-\[
-84\div4=21
-\]
+84 / 4 = 21
 
 Ta có:
 
-\[
-L=\lceil21\times0.9\rceil=19
-\]
+L = ceil(21 * 0.9) = 19
 
-\[
-U=\lfloor21\times1.1\rfloor=23
-\]
+U = floor(21 * 1.1) = 23
 
 Vậy khoảng ước lượng hợp lệ là:
 
-\[
-19\leq E\leq23
-\]
+19 <= E <= 23
 
-**Phạm vi áp dụng:**
+PHẠM VI ÁP DỤNG
 
 - Phép nhân có kết quả nguyên không âm.
 - Phép chia có số chia khác 0 và kết quả nguyên không âm.
 - Giá trị ước lượng và đáp án chính xác được xử lý dưới dạng số nguyên không âm.
-- Hai giới hạn được tính bằng phép làm tròn đã quy định, không phụ thuộc vào cách làm tròn mặc định của giao diện.
+- Hai giới hạn được tính bằng phép làm tròn lên và làm tròn xuống theo quy tắc đã quy định, không phụ thuộc vào cách làm tròn mặc định của giao diện.
 
 **Lý do lựa chọn:**
 

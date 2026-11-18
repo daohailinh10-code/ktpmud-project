@@ -48,7 +48,7 @@ Fixture: Danh sách 12 fixture trong REQUIREMENTS.md và TEST_PLAN.md đã đư�
 Test/CI: TEST_REPORT.md ghi nhận npm ci và npm test thành công, 5 passed/0 failed tại starter commit be5da68...; kết quả này không thay thế kiểm thử tích hợp đầy đủ.
 Deliverable: Đã có TEST_REPORT.md, SECURITY_PRIVACY_CHECKLIST.md, AI_USE.md, CONTRIBUTIONS.md và README trong thư mục nộp bài. Slide/demo hoàn chỉnh chưa được xác minh.
 Metadata: submission.json và source-ref.json hiện nằm ở thư mục gốc submissions/hoang_mai_toan_33/; đã có mã nhóm, mã bài, MSSV và tham chiếu starter/commit/CI.
-Tên file tiến độ cũ bị sai chính tả: File cũ là progress/PROGRESS.md; bản này dùng tên đúng progress/PROGRESS.md.
+Tên thư mục tiến độ đã được chuẩn hóa từ `Progress/` thành `progress/`; đường dẫn hiện tại là `progress/PROGRESS.md`.
 ### 1.5. Câu hỏi cần xác nhận với giảng viên
 Q1: Với câu hỏi estimate, correct_count chỉ tăng khi cả ước lượng và kết quả chính xác đều đúng, còn score_percent vẫn cộng điểm thành phần 50% + 50% — cách hiểu này có đúng với quy ước thống kê của bài không?
 Q2: 12 fixture phải được nạp vào dữ liệu câu hỏi của ứng dụng hay có thể được quản lý trong bộ test tự động, miễn là có cấu trúc và tái lập được?

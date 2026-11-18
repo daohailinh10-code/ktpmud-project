@@ -10,7 +10,7 @@
 
 | Vai trò | Phạm vi đóng góp | Bằng chứng hiện có |
 |---|---|---|
-| Lead / tích hợp | Điều phối acceptance criteria, theo dõi tiến độ và chuẩn bị hồ sơ PR | `../../../progress/PROGRESS.md` |
+| Lead / tích hợp | Điều phối acceptance criteria, theo dõi tiến độ và chuẩn bị hồ sơ PR | `../progress/PROGRESS.md` |
 | Backend | API estimate, kiểm tra dữ liệu đầu vào, chấm điểm và lưu kết quả | Được đặc tả trong `artifacts/DECISIONS.md`; cần gắn commit triển khai cụ thể |
 | Frontend | Giao diện hai ô nhập và gửi câu trả lời estimate | Được đặc tả trong `artifacts/DECISIONS.md`; cần gắn commit triển khai cụ thể |
 | QA | Fixture, kiểm thử công thức, biên và chấm điểm | `artifacts/TEST_PLAN.md`, `artifacts/TEST_REPORT.md` |

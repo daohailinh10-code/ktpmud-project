@@ -22,7 +22,7 @@ Vườn Toán Lớp 3 là ứng dụng luyện tập Toán dành cho học sinh 
 - [REQUIREMENTS](artifacts/REQUIREMENTS.md): yêu cầu chức năng và phi chức năng.
 - [DECISIONS](artifacts/DECISIONS.md): các quyết định thiết kế và kiến trúc.
 - [TEST_PLAN](artifacts/TEST_PLAN.md): kế hoạch, fixture và trường hợp kiểm thử.
-- [PROGRESS](../../progress/PROGRESS.md): tiến độ và các bằng chứng đã xác minh.
+- [PROGRESS](progress/PROGRESS.md): tiến độ và các bằng chứng đã xác minh.
 
 ## Trạng thái
 

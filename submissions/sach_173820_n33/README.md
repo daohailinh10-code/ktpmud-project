@@ -4,45 +4,36 @@
 - **Đề tài:** Xây dựng hệ thống quản lý cửa hàng sách PinkBook Manager.
 - **Lớp / nhóm:** 173820 – N33.
 - **Mã nhóm:** `173820_n33`.
-- **Thành viên (MSSV):**
-  - `202414217`
-  - `202413991`
+- **Thành viên (MSSV):** `202414217`, `202413991`.
 
 ## 2. Tóm tắt bài làm
-PinkBook Manager là ứng dụng web hỗ trợ quản lý hoạt động của một cửa hàng sách. Hệ thống tập trung vào các nghiệp vụ: quản lý danh mục và thông tin sách; theo dõi tồn kho; bán hàng tại quầy; quản lý khách hàng và điểm thành viên; quản lý nhân viên, ca làm và chấm công; tổng hợp số liệu bán hàng và kho.
+PinkBook Manager là ứng dụng web hỗ trợ quản lý danh mục sách, tồn kho, bán hàng tại quầy, khách hàng và điểm thành viên, nhân viên, ca làm, chấm công và thống kê kinh doanh.
 
-Ứng dụng được xây dựng theo mô hình frontend–backend. Giao diện sử dụng React và Vite; backend sử dụng Node.js và Express; dữ liệu được lưu bằng PostgreSQL tương thích qua PGlite khi chạy cục bộ hoặc PostgreSQL thông qua biến môi trường `DATABASE_URL`.
-
-## 3. Chức năng chính
-1. **Quản lý sách:** thêm, cập nhật, tìm kiếm sách theo mã/tên/tác giả; phân loại theo thể loại; cập nhật giá và theo dõi số lượng tồn.
-2. **Bán hàng:** tìm sách, thêm vào giỏ, điều chỉnh số lượng, lập hóa đơn và thanh toán.
-3. **Khách hàng:** lưu hồ sơ, tra cứu theo tên/số điện thoại/email; hỗ trợ khách thành viên và tích điểm theo giao dịch.
-4. **Nhân viên:** quản lý tài khoản, duyệt đăng ký, phân quyền, xếp ca và ghi nhận thời gian làm việc.
-5. **Thống kê:** tổng hợp doanh thu, tình hình tồn kho, khách hàng và nhân sự.
-6. **Bảo mật và dữ liệu:** xác thực bằng số điện thoại/mật khẩu, phiên đăng nhập, kiểm tra quyền theo vai trò, ghi nhận nhật ký và sao lưu/khôi phục dữ liệu.
-
-## 4. Kiến trúc và công nghệ
+## 3. Công nghệ và kiến trúc
 - Frontend: React, Vite, JavaScript, CSS.
-- Backend: Node.js, Express.
-- Cơ sở dữ liệu: PGlite (mặc định cục bộ) hoặc PostgreSQL.
-- Kiểm thử: Node.js test runner và kiểm tra build Vite.
-- Giao tiếp: REST API qua các endpoint `/api/*`.
+- Backend: Node.js, Express, REST API.
+- Cơ sở dữ liệu: PGlite cục bộ hoặc PostgreSQL qua `DATABASE_URL`.
+- Kiểm thử: Node.js test runner và Vite build.
+- Kiến trúc: frontend–backend, lớp API, lớp nghiệp vụ, lớp truy cập dữ liệu và cơ sở dữ liệu.
 
-## 5. Cấu trúc thư mục nộp
-- `report/`: đặc tả yêu cầu, mô tả kiến trúc, kế hoạch và kết quả kiểm thử.
-- `src/`: hướng dẫn truy xuất mã nguồn và cách cài đặt/chạy ứng dụng.
-- `slides/`: dàn ý nội dung thuyết trình.
+## 4. Các chức năng
+1. Quản lý danh mục sách, thể loại, giá và tồn kho.
+2. Bán hàng tại quầy, tạo hóa đơn và thanh toán.
+3. Quản lý khách hàng, tra cứu hồ sơ và tích điểm thành viên.
+4. Quản lý tài khoản nhân viên, phân quyền, xếp ca và chấm công.
+5. Thống kê doanh thu, kho, khách hàng và nhân viên.
+6. Xác thực, nhật ký thao tác và sao lưu/khôi phục dữ liệu.
 
-## 6. Mã nguồn và cách chạy
-Mã nguồn ứng dụng gốc được quản lý tại:
-https://github.com/daohailinh10-code/tao-web-quan-li
+## 5. Cấu trúc thư mục
+- `report/`: SRS, mô tả kiến trúc, báo cáo kiểm thử.
+- `src/`: mã nguồn ứng dụng đã sao chép từ repository PinkBook Manager, kèm hướng dẫn chạy.
+- `slides/`: dàn ý 10 slide thuyết trình.
 
-Nhánh mã nguồn tham chiếu: `fix/pinkbook-local-database`.
-
-Các bước chạy được mô tả trong `src/README.md`. Không đưa tệp `.env`, mật khẩu, dữ liệu người dùng thật hoặc dữ liệu cơ sở dữ liệu cá nhân vào bản nộp.
+## 6. Cài đặt
+Xem `src/README.md`. Mã nguồn gốc: https://github.com/daohailinh10-code/tao-web-quan-li (nhánh `fix/pinkbook-local-database`). Không đưa file môi trường, mật khẩu, dữ liệu người dùng thật hoặc cơ sở dữ liệu cá nhân vào bản nộp.
 
 ## 7. Kiểm thử
-Báo cáo kiểm thử được tổng hợp tại `report/TEST_REPORT.md`. Kết quả được ghi theo tài liệu kiểm thử hiện có của dự án; nhóm cần chạy lại trên môi trường nộp cuối cùng trước khi nghiệm thu.
+Xem `report/TEST_REPORT.md`. Kết quả lịch sử chỉ là tham chiếu; nhóm cần chạy lại `npm test` trên đúng commit bàn giao cuối cùng.
 
-## 8. Lưu ý về mã case study
-Đề tài PinkBook Manager là đề tài quản lý cửa hàng sách của nhóm. Mã slug `sach` và mã case study `N/A` hiện là thông tin nhóm tự khai báo, chưa phải mã case study chính thức trong danh sách slug của repository nhận bài. Cần xác nhận với giảng viên/TA trước khi mở PR để tránh CI từ chối cấu trúc.
+## 8. Lưu ý về quy định case study
+Slug `sach` và mã case study `N/A` hiện là thông tin nhóm tự khai báo, chưa nằm trong danh sách slug hợp lệ của repository nhận bài. Cần xin giảng viên/TA xác nhận mã case study và slug trước khi mở PR; CI hiện tại sẽ từ chối slug `sach`.

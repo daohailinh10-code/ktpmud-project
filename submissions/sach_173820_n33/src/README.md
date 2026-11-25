@@ -1,47 +1,46 @@
 # Mã nguồn PinkBook Manager
 
-## Repository nguồn
-Mã nguồn ứng dụng đầy đủ được lưu tại:
+## Nguồn mã
+Mã nguồn được sao chép từ repository:
 https://github.com/daohailinh10-code/tao-web-quan-li
+Nhánh nguồn: `fix/pinkbook-local-database`.
 
-Nhánh tham chiếu: `fix/pinkbook-local-database`.
-
-> Thư mục `src/` trong bản nộp này ghi nhận nguồn mã và hướng dẫn tái lập. Mã nguồn gốc hiện vẫn nằm trong repository riêng nêu trên; chưa được sao chép vật lý toàn bộ vào thư mục nộp.
-
-## Cấu trúc mã nguồn chính
-- `frontend/src/app.jsx`: điều hướng ứng dụng, đăng nhập và phân quyền giao diện.
-- `frontend/src/book_workspace.jsx`: quản lý danh mục sách.
-- `frontend/src/sales_workspace.jsx`: bán hàng tại quầy.
-- `frontend/src/quan_li_khach_hang.jsx`: quản lý khách hàng.
-- `frontend/src/staff_workspace.jsx`: lịch làm và chấm công.
-- `frontend/src/thong_ke.jsx`: thống kê.
-- `server/app.js`: Express API, xác thực và middleware.
-- `server/service.js`: nghiệp vụ và truy cập dữ liệu.
-- `server/db.js`: kết nối PGlite/PostgreSQL.
-- `server/schema.sql`: cấu trúc cơ sở dữ liệu.
-- `server/security.js`: kiểm tra dữ liệu, mật khẩu và quyền.
-- `tests/runtime.test.js`: kiểm thử tự động.
+## Cấu trúc
+- `package.json`, `package-lock.json`: cấu hình và khóa phụ thuộc.
+- `frontend/`: ứng dụng React/Vite, các màn hình sách, bán hàng, khách hàng, nhân viên và thống kê.
+- `server/`: Express API, xử lý nghiệp vụ, bảo mật, cơ sở dữ liệu và schema.
+- `scripts/`: script chạy, dừng, sao lưu, khôi phục và di chuyển dữ liệu cục bộ.
+- `tests/runtime.test.js`: bộ kiểm thử runtime.
+- `.env.example`: mẫu biến môi trường; không chứa thông tin bí mật.
 
 ## Yêu cầu
-- Node.js phiên bản `>=22.12.0`.
+- Node.js `>=22.12.0`.
 - npm.
-- Không bắt buộc cài PostgreSQL nếu dùng PGlite mặc định.
-- Nếu dùng PostgreSQL ngoài, cấu hình `DATABASE_URL` trong môi trường chạy.
+- Không bắt buộc cài PostgreSQL nếu sử dụng PGlite mặc định.
+- Nếu dùng PostgreSQL ngoài, thiết lập `DATABASE_URL`.
 
 ## Cài đặt và chạy
-Tại thư mục gốc repository mã nguồn:
+Mở terminal tại thư mục `submissions/sach_173820_n33/src/`, sau đó chạy:
+
 ```bash
-npm install
+npm ci
 npm test
 npm run dev
 ```
 
-Để chạy theo chế độ start:
+Để chạy ở chế độ start:
+
 ```bash
 npm start
 ```
 
-Lưu ý: cấu hình môi trường phải được thiết lập theo `.env.example`; không commit file `.env` hoặc thông tin đăng nhập. Dữ liệu ứng dụng mặc định được lưu trong thư mục `data/` và không nên đưa dữ liệu thực lên repository công khai.
+Backend mặc định chạy tại `http://127.0.0.1:3001`; Vite dev server chạy tại `http://127.0.0.1:5173` và proxy API sang backend.
 
-## Kiểm tra
-Lệnh `npm test` chạy kiểm thử runtime và build frontend. Khi bàn giao, cần đính kèm log thực tế của lần chạy trên commit cuối.
+## An toàn dữ liệu
+- Chỉ dùng dữ liệu demo/synthetic khi kiểm thử.
+- Không commit `.env`, mật khẩu, token, file database hoặc dữ liệu cá nhân.
+- Cấu hình thật phải được cung cấp qua biến môi trường ở máy triển khai.
+- Không tải thư mục `data/` hoặc `backups/` lên repository.
+
+## Kiểm thử
+`npm test` chạy Node.js test runner và build frontend. Cần chạy lại lệnh này trên commit cuối cùng và lưu log thực tế vào hồ sơ nghiệm thu.
